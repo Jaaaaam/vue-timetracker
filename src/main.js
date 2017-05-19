@@ -6,13 +6,21 @@ import App from './App'
 import VueRouter from 'vue-router'
 
 import Home from './components/Home'
+import TimeEntries from './components/TimeEntries'
+import LogTime from './components/LogTime'
 
 Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/', component: Home }
+    { path: '/', component: Home },
+  { path: 'time-entries',
+    component: TimeEntries,
+    children: [
+            { path: 'logtime', component: LogTime }
+    ]
+  }
 ]
 
 const router = new VueRouter({
