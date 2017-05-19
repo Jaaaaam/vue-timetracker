@@ -35,7 +35,31 @@ const getters = {
   allEntries: state => state.timeEntries
 }
 
+const mutations = {
+  removeTimeEntry (state, timeEntry) {
+    console.log(timeEntry)
+    console.log(state)
+    var timeEntries = state.timeEntries
+    timeEntries.splice(timeEntries.indexOf(timeEntry), 1)
+  },
+  addTimeEntry (state, timeEntry) {
+    console.log(state)
+    console.log(timeEntry)
+    var timeEntries = state.timeEntries
+    timeEntries.push(timeEntry)
+  }
+}
+
+const actions = {
+  removeTimeEntry ({ commit, state }, timeEntry) {
+    commit('removeTimeEntry', timeEntry)
+  },
+  addTimeEntry: ({ commit, timeEntry }) => commit('addTimeEntry')
+}
+
 export default new Vuex.Store({
   state,
-  getters
+  actions,
+  getters,
+  mutations
 })
