@@ -50,12 +50,15 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 
 export default {
   computed: mapGetters({
     timeEntries: 'allEntries'
-  })
+  }),
+  methods: mapActions([
+    'removeTimeEntry'
+  ])
 }
 </script>
 

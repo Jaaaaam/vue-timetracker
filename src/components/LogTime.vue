@@ -30,8 +30,8 @@
           placeholder="Comment"
         />
       </div>
-    </div>    
-    <button class="btn btn-primary" @click="">Save</button>
+    </div>
+    <button class="btn btn-primary" @click="addTimeEntry(timeEntry)">Save</button>
     <router-link to="/time-entries" tag="button" class="btn btn danger">Cancel</router-link>
   </div>
 </template>

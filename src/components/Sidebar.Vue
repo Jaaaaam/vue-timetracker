@@ -7,13 +7,25 @@
           <div class="">
 
           </div>
-          <h1 class="text-center"> {{  }} hours</h1>
+          <h1 class="text-center"> {{ total }} hours</h1>
       </div>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
+  computed: {
+    ...mapGetters({
+      entries: 'allEntries'
+    }),
+    total () {
+      return this.entries.reduce((total, entry) => {
+        return total + parseFloat(entry.totalTime)
+      }, 0)
+    }
+  }
 }
 </script>
 
