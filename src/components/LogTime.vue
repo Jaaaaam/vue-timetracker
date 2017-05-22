@@ -52,8 +52,8 @@ export default {
     }
   },
   methods: {
-    addTimeEntry: function (data) {
-      this.$store.commit('addTimeEntry', data)
+    addTimeEntry: function (timeEntry) {
+      this.$store.dispatch('addTimeEntry', timeEntry)
     }
   }
 }

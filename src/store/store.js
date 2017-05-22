@@ -51,10 +51,11 @@ const mutations = {
 }
 
 const actions = {
-  removeTimeEntry ({ commit, state }, timeEntry) {
+  removeTimeEntry ({ commit }, timeEntry) {
     commit('removeTimeEntry', timeEntry)
+    console.log(commit)
   },
-  addTimeEntry: ({ commit, timeEntry }) => commit('addTimeEntry')
+  addTimeEntry: ({ commit }, timeEntry) => commit('addTimeEntry', timeEntry)
 }
 
 export default new Vuex.Store({
